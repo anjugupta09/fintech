@@ -1,0 +1,6 @@
+rootProject.name = 'fintech'
+include 'account-service'
+include 'shared'
+include 'transaction-service'
+include 'notification-service'
+
