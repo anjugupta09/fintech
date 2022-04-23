@@ -23,30 +23,31 @@ Java, Spring boot, MySql, Kafka
 3. And similarly run the other two microservices transaction-service and notification-service
 
 # Api End Points Details
-1. User Registration- POST: /auth/signup
+1. User Registration- POST:/auth/signup
    This will register the user and user account in DB.
 
-2. User login- POST: /auth/login
+2. User login- POST:/auth/login
    After user registration, user can sign in using the credentials email and password. Access token will be generated on successful authentication.
 
-3. Get Account Details- GET: /account/{accountNumber}
+3. Get Account Details- GET:/account/{accountNumber}
    Account details can be fetched with respect to account number provided as path param. If valid accessToken is not passed in the request, 404 error code will be thrown.
 
-4. Check Balance- GET: /account/checkBalance/{accountNumber}
+4. Check Balance- GET:/account/balance/{accountNumber}
    To check balance for the provided account number.
 
-5. Fund Transfer- POST: /transaction/fundTransfer
+5. Fund Transfer- POST:/transaction/fundTransfer
    To transfer the funds between two accounts.
 
 # Application Flow:
-1. Please do the registration using the API "User registration"
+1. Please do the registration using the API "POST:/auth/signup"
 2. After you are successfully registered, you will get the email notification.
-3. Now you can login using the API "User login" which will return the access token in response along with user details.
+3. Now you can login using the API "POST:/auth/login" which will return the access token in response along with user details.
 4. Access token will be required for further API calls otherwise you will get the un authorized error.
-5. Using the valid accessToken, you can do fund transfer, check balance or get account details.
+5. Using the valid accessToken, you can do fund transfer (POST:/transaction/fundTransfer), 
+    check balance (GET:/account/balance/{accountNumber}) or get account details (GET:/account/{accountNumber})
 
 # Important things to take care
-1. We can keep the secret key and passwords in the kubernetes secrets. I have kept these in properties files for simplicity.
+We can keep the secret key and passwords in the kubernetes secrets. I have kept these in properties files for simplicity.
 
 # Junit test cases
 I have added some Junit test cases. Wanted to add more but as it would have taken more time, So I added it for 2-3 classes only.
