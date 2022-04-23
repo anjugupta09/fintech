@@ -2,11 +2,12 @@
 
 1. I have created three submodules in single repo which will run as microservices all on different ports.
    There is a shared submodule, it contains the common functionality needed in these microservices.
+
 2. JWT authentication logic in present in shared submodule. There are two API calls "New user sign up" and "login" which will not require JWT authentication.
    On calling the login API, access token will be generated and will populate in the API response.
 
 3. Account service has API calls for user-registration and sign in functionality.
-4. Transaction service has API calls for fund transfer and to get account balance.
+4. Transaction service has API call for fund transfer.
 
 5. According to microservice standard, account-service and transaction service should have separate database and transaction management should have been handled using SAGA Orchestration/Coordinator 
    which would have made this whole exercise pretty complicated. For simplicity, I decided to used single database for account as well as transaction service.
