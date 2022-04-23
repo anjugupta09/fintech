@@ -38,6 +38,16 @@ Java, Spring boot, MySql, Kafka
 5. Fund Transfer- POST: /transaction/fundTransfer
    To transfer the funds between two accounts.
 
+# Application Flow:
+1. Please do the registration using the API "User registration"
+2. After you are successfully registered, you will get the email notification.
+3. Now you can login using the API "User login" which will return the access token in response along with user details.
+4. Access token will be required for further API calls otherwise you will get the un authorized error.
+5. Using the valid accessToken, you can do fund transfer, check balance or get account details.
+
+# Important things to take care
+1. We can keep the secret key and passwords in the kubernetes secrets. I have kept these in properties files for simplicity.
+
 # Junit test cases
 I have added some Junit test cases. Wanted to add more but as it would have taken more time, So I added it for 2-3 classes only.
 
