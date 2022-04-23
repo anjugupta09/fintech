@@ -39,9 +39,9 @@ Java, Spring boot, MySql, Kafka
    To transfer the funds between two accounts.
 
 # Application Flow:
-1. Please do the registration using the API "POST:/auth/signup"
+1. Please do the registration using the API POST:/auth/signup
 2. After you are successfully registered, you will get the email notification.
-3. Now you can login using the API "POST:/auth/login" which will return the access token in response along with user details.
+3. Now you can login using the API POST:/auth/login which will return the access token in response along with user details.
 4. Access token will be required for further API calls otherwise you will get the un authorized error.
 5. Using the valid accessToken, you can do fund transfer (POST:/transaction/fundTransfer), 
     check balance (GET:/account/balance/{accountNumber}) or get account details (GET:/account/{accountNumber})
